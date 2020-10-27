@@ -6,13 +6,13 @@ import java.io.*;
 public class Start {
   public static void main(String[] args) {
     TreeViewer treeViewer = new TreeViewer();
-    String treePath = "C:/epam/test";
+    String treePath = "C:/epam/info.txt";
     String fileToWrite = "C:/epam/info.txt";
     File file = new File(treePath);
 
     if (file.isDirectory()) {
       try (Writer out = new FileWriter(fileToWrite)) {
-        treeViewer.displayTree(new File(treePath), "", out);
+        treeViewer.displayTree(new File(treePath), "|++ " + file.getName(), out);
       } catch (IOException e) {
         e.printStackTrace();
       }
