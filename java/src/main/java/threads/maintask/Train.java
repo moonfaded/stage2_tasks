@@ -3,8 +3,8 @@ package threads.maintask;
 import java.util.concurrent.Semaphore;
 
 class Train extends Thread {
-  Semaphore semaphore;
-  int id;
+  private Semaphore semaphore;
+  private int id;
 
   Train(Semaphore semaphore, int id) {
     this.semaphore = semaphore;
