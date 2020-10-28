@@ -2,6 +2,7 @@ package errorandexception.maintask;
 
 import errorandexception.maintask.exceptions.*;
 import errorandexception.maintask.models.*;
+import errorandexception.maintask.utils.CustomExceptionCheck;
 
 public class Start {
   public static void main(String[] args) throws WrongMarkException, NoFacultiesException, NoGroupsOfFacultyException, NoStudentsInGroupException, NoSubjectsException {
@@ -28,7 +29,7 @@ public class Start {
     AI.getRecordBook().addMarksToSubject(Subject.LOGIC, 8, 9);
     AI.getRecordBook().addMarksToSubject(Subject.MATH, 4, 6, 6);
 
-    Utilities.checkForAnyCustomExceptions();
+    CustomExceptionCheck.checkForAnyCustomExceptions();
 
     System.out.println("Alexander Vladyko's average math score: "
                            + AV.getRecordBook().getAverageMarkBySubject(Subject.MATH));
